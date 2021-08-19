@@ -1,11 +1,49 @@
-<mat-toolbar>
-    <span>Frankly Lawns</span>
+<!--<mat-toolbar color="accent">-->
+<!--  <button class="btn btn-primary" (click)="toggleSideNav()">Home</button>-->
+<!--  <span class="site_header">Frankly Lawns</span>-->
+<!--  <div class="navButtons d-none d-lg-block d-xl-block">-->
+<!--    <section class="nav-options">-->
+<!--    </section>-->
+<!--  </div>-->
+<!--</mat-toolbar>-->
+
+
+
+
+<div>
+  <mat-toolbar class="nav-toolbar">
+    <div fxHide.gt-sm="true">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+
+    <a mat-button class="companyName" routerLink="/">
+      <span>Frankly Lawns</span>
+    </a>
     <span class="spacer"></span>
-    <section class="nav-options">
-        <button mat-button>Home</button>
-        <button mat-button>Services</button>
-        <button mat-button>About</button>
-        <button mat-button>Contact</button>
-        <button mat-button>Quote</button>
-    </section>
-</mat-toolbar>
+    <div fxHide.lt-md="true">
+      <nav class="nav">
+        <div *ngFor="let option of navigationOptions">
+          <a class="nav-link" [routerLink]="option.route">{{option.label}}</a>
+        </div>
+      </nav>
+    </div>
+
+  </mat-toolbar>
+  <mat-sidenav-container fxFlexFill class="example-container">
+
+    <mat-sidenav #sidenav fxLayout="row" mode="over"  opened="false">
+      <div fxLayout="row">
+        <div >
+          <a *ngFor="let option of navigationOptions" class="nav-link"
+             (click)="sidenav.toggle()" [routerLink]="option.route">{{option.label}}</a>
+        </div>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <app-footer></app-footer>
+</div>

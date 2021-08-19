@@ -1,0 +1,31 @@
+.service-cards {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+img {
+  height: 275px;
+  margin-bottom: 2em;
+}
+
+mat-card-actions {
+  margin-bottom: 0;
+  padding-bottom: 1em;
+}
+
+mat-card {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-card-header {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  margin-bottom: 2em;
+}
+mat-card-content {
+  flex-grow: 1;
+  overflow: auto;
+  margin-bottom: 4em;
+}

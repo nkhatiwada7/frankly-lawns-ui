@@ -1,3 +1,15 @@
-<div class="container">
-    <app-carousel></app-carousel>
+<div class="header">
+  <mat-card class="img-card">
+    <img mat-card-image src="assets/frankly-lawns-home.jpg"  alt="freshly-mowed-grass">
+  </mat-card>
+  <mat-toolbar class="services-toolbar">
+    Featured Services
+  </mat-toolbar>
+  <div>
+    <app-service-cards></app-service-cards>
+  </div>
+  <mat-toolbar class="services-toolbar">
+    <a class="services-link" [routerLink]="['/services']">View All Services</a>
+  </mat-toolbar>
+  <app-servicing-area></app-servicing-area>
 </div>

@@ -1,0 +1,16 @@
+
+<mat-sidenav-container fxFlexFill class="example-container">
+  <mat-sidenav fxLayout="row" mode="side" opened class="example-sidenav">
+    <mat-nav-list>
+      <mat-selection-list [multiple]="false">
+        <mat-list-option *ngFor="let service of services">
+          <a class="list-link" mat-list-item>{{service.label}}</a>
+        </mat-list-option>
+      </mat-selection-list>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content >
+    <p #content>something</p>
+  </mat-sidenav-content>
+</mat-sidenav-container>

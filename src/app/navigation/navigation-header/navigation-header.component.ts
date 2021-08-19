@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-navigation-header',
@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationHeaderComponent implements OnInit {
 
+  navigationOptions = [
+    {label: 'Home', route: ['/home']},
+    {label: 'Services', route: ['/services']},
+    {label: 'About', route: ['/about']}
+  ]
+
+  @Output() sideNav: EventEmitter<boolean> = new EventEmitter<boolean>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggleSideNav(): void {
+    this.sideNav.emit(true);
   }
 
 }
