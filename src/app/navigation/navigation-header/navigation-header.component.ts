@@ -10,7 +10,8 @@ export class NavigationHeaderComponent implements OnInit {
   navigationOptions = [
     {label: 'Home', route: ['/home']},
     {label: 'Services', route: ['/services']},
-    {label: 'About', route: ['/about']}
+    {label: 'About', route: ['/about']},
+    {label: 'Contact', route: ['/contact']}
   ]
 
   @Output() sideNav: EventEmitter<boolean> = new EventEmitter<boolean>();
